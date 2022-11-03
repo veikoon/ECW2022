@@ -22,7 +22,8 @@ Une fois l'appli lancé on se connecte sur l'interface web http://127.0.0.1:8000
 
 ![MobSF](images/mobsf.png)
 
-On prend le temps d'installer Android Studio durant l'analyse. Une fois l'analyse terminé on peut parcourir le report afin de detecter les vulnérabilités évidente.
+On prend le temps d'installer Android Studio durant l'analyse. Une fois l'analyse terminé on peut parcourir le report afin de detecter les vulnérabilités évidente.  
+Le rapport de l'analyse est disponnible [ici](report.pdf).  
 L'application ne présente visiblement pas de vulnérabilité grave, une chose retient cependant notre attention :
 
 ![allowBackup](images/backup.png)

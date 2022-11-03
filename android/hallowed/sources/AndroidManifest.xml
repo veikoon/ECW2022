@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" android:compileSdkVersion="32" android:compileSdkVersionCodename="12" package="com.ecw2022.hallowed" platformBuildVersionCode="32" platformBuildVersionName="12"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="32" />
+    <permission-group android:name="ECW2022.perm-group.GROUP" />
+    <permission android:name="com.ecw2022.WHAT_A_FUNNY_PERM" android:protectionLevel="dangerous" android:permissionGroup="ECW2022.perm-group.GROUP" />
+    <permission android:name="com.ecw2022.ADMIN_PERM_DO_NOT_ACCESS" android:protectionLevel="signature" />
+    <permission android:name="com.ecw2022.I_SEE_YOU" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.CAMERA" />
+    <permission android:name="com.ecw2022.ACCESS_LOCATION" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.LOCATION" />
+    <permission android:name="com.ecw2022.USER_PERM" />
+    <uses-permission android:name="com.ecw2022.WHAT_A_FUNNY_PERM" />
+    <uses-permission android:name="com.ecw2022.ACCESS_LOCATION" />
+    <uses-permission android:name="com.ecw2022.I_SEE_YOU" />
+    <uses-permission android:name="com.ecw2022.ADMIN_PERM_D0_N0T_ACCESS" />
+    <uses-permission android:name="com.ecw2022.USER_PERM" />
+    <application android:theme="@style/Theme.Perm" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true" android:supportsRtl="true" android:extractNativeLibs="false" android:roundIcon="@mipmap/ic_launcher_round" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <activity android:name="com.ecw2022.hallowed.MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ecw2022.hallowed.FunnyActivity" android:permission="com.ecw2022.WHAT_A_FUNNY_PERM" android:exported="true">
+            <intent-filter>
+                <action android:name="com.ecw2022.FunnyActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ecw2022.hallowed.UserActivity" android:permission="com.ecw2022.USER_PERM" android:exported="true">
+            <intent-filter>
+                <action android:name="com.ecw2022.UserActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ecw2022.hallowed.AdminActivity" android:permission="com.ecw2022.ADMIN_PERM_D0_N0T_ACCESS" android:exported="true">
+            <intent-filter>
+                <action android:name="com.ecw2022.AdminActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.ecw2022.hallowed.androidx-startup">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup" />
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
+        </provider>
+    </application>
+</manifest>
